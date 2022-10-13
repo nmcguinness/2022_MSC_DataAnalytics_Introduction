@@ -26,19 +26,21 @@ tail(chickwts, n = 12)
 # show basic statistical summary (median, Q1,2,3 etc)
 summary(chickwts)
 
-# stripchart with title
-stripchart(chickwts$weight, main = "Strip Chart of Chick Weights")
+# stripchart with title and plotting character set
+stripchart(chickwts$weight, main = "Strip Chart of Chick Weights",
+           pch = 21)
 
-# histogram with title and xy labels
+# histogram with title and xy labels and color
 hist(chickwts$weight, main = "Frequency of Chick Weights",
      xlab = "Chick Weight (grams)",
-     ylab = "Weight Range Frequency")
+     ylab = "Weight Range Frequency",
+     col = "orange")
 
 # boxplot with title and color
 boxplot(chickwts$weight, main = "Boxplot of Chick Weights",
-        col = "rgb(0.5, 0.5, 0.5)")
+        col = rgb(0.75, 0.5, 0.75))
 
-
+# remember to get help on a function just type ? before function and hit Enter in the Console (e.g. ?pch)
 
 
 
