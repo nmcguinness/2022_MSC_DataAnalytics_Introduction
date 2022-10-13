@@ -37,7 +37,10 @@ hist(chickwts$weight, main = "Frequency of Chick Weights",
      col = "orange")
 
 # boxplot with title and color
-boxplot(chickwts$weight, main = "Boxplot of Chick Weights",
+boxplot(chickwts$weight)
+
+# multiple boxplot with title and color
+boxplot(chickwts$weight~chickwts$feed, main = "Chick Weights in Grams",
         col = rgb(0.75, 0.5, 0.75))
 
 # remember to get help on a function just type ? before function and hit Enter in the Console (e.g. ?pch)
