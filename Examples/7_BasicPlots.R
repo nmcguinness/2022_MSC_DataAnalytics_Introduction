@@ -36,7 +36,7 @@ hist(chickwts$weight, main = "Frequency of Chick Weights",
 
 # boxplot with title and color
 boxplot(chickwts$weight, main = "Boxplot of Chick Weights",
-        col = "green")
+        col = "rgb(0.5, 0.5, 0.5)")
 
 
 
