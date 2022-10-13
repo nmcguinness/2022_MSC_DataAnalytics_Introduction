@@ -57,6 +57,8 @@ repeatTeamAllocations
 
 #################### VECTOR - USING [] ###########################
 
+#c('alan','bea','ciara', 'dave', 'erica') 
+
 # square bracket notation to modify a vector
 studentNames[2] <- "beatrix"
 studentNames
@@ -67,6 +69,9 @@ aName
 
 
 #################### VECTOR - SUBSETTING ###########################
+
+#c('alan','bea','ciara', 'dave', 'erica') 
+studentNames <- c('alan','bea','ciara', 'dave', 'erica') 
 
 # using a negative index to exclude a value
 exclName <- studentNames[-2]
@@ -88,8 +93,14 @@ someStudentNames3
 #################### VECTOR - LENGTH & SORT ###########################
 
 #length and sort (natural sort order)
-theNamesLength <- length(names)
+theNamesLength <- length(studentNames)
 theNamesLength
+
+for(i in 1:length(studentNames))
+{
+  print(studentNames[i])
+}
+
 
 sortedEnergyUsedInKW <- sort(energyUsedInKW)
 energyUsedInKW
@@ -97,7 +108,7 @@ energyUsedInKW
 #################### VECTOR - SHUFFLE USING SAMPLE ###########################
 
 # a random seed to start the random number generator using by sample()
-set.seed(13213)
+set.seed(56465)
 
 # sample() will use a random number to pick a random name within the vector
 shuffledStudentNames <- sample(studentNames)
@@ -109,10 +120,14 @@ quarterlyIncome <- c(18000, 35500, 22000, 11000)
 
 # todo - add element-wise demo code...
 
+quaterlyTaxContribution <- 0.25 * quarterlyIncome; quaterlyTaxContribution
 
+boostIncome <- quarterlyIncome + 100; boostIncome
 
+# when the vector being divided is too short R will re-cycle values
+divisorVec <- c(10, 20)
 
-
+dividedIncome <- quarterlyIncome / divisorVec; dividedIncome
 
 
 

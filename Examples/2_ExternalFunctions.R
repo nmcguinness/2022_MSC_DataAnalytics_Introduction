@@ -16,3 +16,18 @@
 squareDiff <- function(a,b){
   (a - b)^2
 }
+
+
+#' @title logAbs
+#' @description Desc of the function...
+#' @param someValue Numeric
+#' @param base Numeric
+#' @return Numeric Abs log of someValue
+#' @export
+#' @examples
+#' result <- logAbs(10, 2)
+logAbs <- function(someValue, base){  log(abs(someValue), base)}
+
+
+
+

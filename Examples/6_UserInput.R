@@ -4,7 +4,8 @@
 #' @bugs None
 #' @keywords as, conversion, paste, print
 #' @seealso https://www.geeksforgeeks.org/taking-input-from-user-in-r-programming/
-#' @note To RUN this code, save the file, then click on the Source button in the top RHS of this script pane. We do this because the standard (CTRL+ENTER) approach wont work when we read user input
+#' @note To RUN this code, save the file, then click on the Source button in the top RHS of this script pane. 
+#' We do this because the standard (CTRL+ENTER) approach wont work when we read user input
 
 # automatically clear console - the string literal "\014" sends a CTRL + L to the console to clear it
 cat("\014")

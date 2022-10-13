@@ -209,6 +209,15 @@ paste("Circle area is ", area1)
 #   Function body 
 # }
 
+# function definition
+absDbl <- function(a){
+  abs(2*a)
+}
+
+# invoking / invocation
+result <- absDbl(-10); result
+
+
 square <- function(x){  x * x }
 theSquare = square(12); theSquare
 
