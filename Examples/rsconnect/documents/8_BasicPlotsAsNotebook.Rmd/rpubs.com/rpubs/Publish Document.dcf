@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/962676/cdb233a09eea492b95d62c6d2693fd7e
+bundleId: https://api.rpubs.com/api/v1/document/962676/cdb233a09eea492b95d62c6d2693fd7e
+url: http://rpubs.com/nmcguinness/962676
+when: 1666886468.80062
+lastSyncTime: 1666886468.80063

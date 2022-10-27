@@ -46,7 +46,9 @@ hist(chickwts$weight, main = "Frequency of Chick Weights",
 
 # boxplot ###################################################################
 
-boxplot(chickwts$weight)
+boxplot(chickwts$weight,
+        main = "Weight of Chickens",
+        ylab = "Weight(grams)")
 
 # box-plot (multiple categories using ~) ####################################
 
@@ -62,9 +64,9 @@ cities <- c("dublin", "paris", "narvik", "caracas")
 # uncomment the parameters (i.e. edges, main, border) to see what each parameter does
 pie(x = sunshinePerDay, 
     labels = cities, 
-    edges = 32,
+    edges = 64,
     main = "Hours Sunshine on 21st June 2022", 
-    border = FALSE,
+    border = TRUE,
     col = c("red","blue","green","orange"))
 
 

@@ -1,0 +1,160 @@
+
+---
+title: "9_BasicPlotsAsNotebook"
+author: "Niall McGuinness"
+date: "October, 2022"
+output:
+  html_document:
+    code_folding: show
+    toc: yes
+    toc_float: no
+    number_sections: yes
+    df_print: paged
+  word_document:
+    toc: yes
+---
+
+<!-- # Heading 1 -->
+<!-- Some text describing the **purpose** of this sample. -->
+
+<!-- ## Heading 2 -->
+<!-- Some text under Heading 2. -->
+
+<!-- ### Heading 3 -->
+<!-- A bulleted list of items. -->
+
+<!-- * For more details on R Markdown we can add a link to a [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf). -->
+
+
+# Visualising Data with R Studio
+
+The first block of R code in this r Notebook will download any necessary packages, compile where necessary and load them for use in this file. 
+
+
+
+## Load Packages
+
+We include tidyr because it allows us to support tables that are paged (e.g. line 66 when we output the chickwts data).
+
+Change include to TRUE and see what happens when you Knit the output HTML document.
+
+```{r include=FALSE}
+
+# install
+if(!require("tidyr")) install.packages("tidyr")
+
+# library
+library(tidyr)
+```
+
+
+
+## Show Available Data Sets
+
+We should probably comment out this code as it keeps opening and switching to the Viewer window!
+
+```{r include=FALSE}
+data()
+```
+
+
+
+## Examine Data
+
+Change echo to TRUE and see what happens when you Knit the output HTML document.
+
+```{r echo=FALSE}
+chickwts
+
+# access individual columns by name
+chickwts$feed
+
+# shown variable names
+names(chickwts)
+
+# show structure of the data
+str(chickwts)
+
+# show first or last N rows of data
+head(chickwts, n = 10)
+tail(chickwts, n = 12)
+
+# show basic statistical summary (median, Q1,2,3 etc)
+summary(chickwts)
+
+```
+
+
+
+## Example - Stripchart
+
+A Stripchart with title (main) and plot character (pch) set. Try typing ?pch in the console and hitting Enter to see help on what difference values for pch will look like.
+
+```{r echo=TRUE}
+# title and plotting character set
+stripchart(chickwts$weight, 
+           main = "Strip Chart of Chick Weights",
+           pch = 21)
+```
+
+
+
+## Example - Stripchart
+
+A Histogram with title (main) and x/y labels (xlab, ylab) and color set. Try setting color using rgb() (e.g., col = rgb(1,0,0) or col = "#FF0000").
+
+For more information on HTML Hex Codes click [here](https://htmlcolorcodes.com/). To find color palettes that are compatible use one of the color palette pickers located [here](https://htmlcolorcodes.com/resources/best-color-palette-generators/)
+
+```{r echo=TRUE}
+# title and xy labels and color
+hist(chickwts$weight, main = "Frequency of Chick Weights",
+     xlab = "Chick Weight (grams)",
+     ylab = "Weight Range Frequency",
+     col = "red")
+```
+
+
+
+## Example - Boxplot - 1
+
+A simple Boxplot with title and y-label.
+
+```{r echo=TRUE}
+# simple box plot
+boxplot(chickwts$weight,
+        main = "Weight of Chickens",
+        ylab = "Weight(grams)")
+```
+
+
+
+## Example - Boxplot - 2
+
+A Boxplot comparing across a number of categories using ~.
+
+```{r echo=TRUE}
+# box-plot (multiple categories using ~) 
+boxplot(chickwts$weight~chickwts$feed, 
+        main = "Chick Weights in Grams",
+        col = rgb(0.75, 0.5, 0.75))
+```
+
+
+
+## Example - Boxplot - 2
+
+A Piechart using data defined in two vectors. Title, labels, edges, border, and colors for each pie segment have been set.
+
+```{r echo=TRUE}
+sunshinePerDay <- c(6, 12, 17, 13)
+cities <- c("dublin", "paris", "narvik", "caracas")
+
+# uncomment the parameters (i.e. edges, main, border) to see what each parameter does
+pie(x = sunshinePerDay, 
+    labels = cities, 
+    edges = 64,
+    main = "Hours Sunshine on 21st June 2022", 
+    border = TRUE,
+    col = c("#9CAFB7","#ADB993","#D0D38F","#F6CA83"))
+```
+
