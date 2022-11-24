@@ -1,0 +1,19 @@
+---
+title: "Normal Distribution for DAIE"
+author: "NMCG"
+date: "2022-11-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+```
+
+
+
+
+

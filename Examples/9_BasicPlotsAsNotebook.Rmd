@@ -4,7 +4,7 @@ title: "9_BasicPlotsAsNotebook"
 author: "Niall McGuinness"
 date: "October, 2022"
 output:
-  word_document:
+  pdf_document:
     toc: yes
   html_document:
     code_folding: show
@@ -12,6 +12,8 @@ output:
     toc_float: no
     number_sections: yes
     df_print: paged
+  word_document:
+    toc: yes
 ---
 
 <!-- # Heading 1 -->
