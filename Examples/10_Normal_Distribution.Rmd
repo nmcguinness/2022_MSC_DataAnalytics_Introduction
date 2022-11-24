@@ -5,13 +5,60 @@ date: "2022-11-24"
 output: html_document
 ---
 
+# Load common libraries
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+# Statistical Analysis of Shoe vs Height vs Gender vs DISC
+
+```{r Load & View, echo=TRUE}
+
+library(readr)
+shoe_sizes_1 <- read_csv("shoe_sizes_1.csv")
+#View(shoe_sizes_1)
+
+# head(shoe_sizes_1, 10)
+tail(shoe_sizes_1, 5)
+
+summary(shoe_sizes_1)
+
+shoe_sizes_1$height_cm
+
+boxplot(shoe_sizes_1$height_cm~shoe_sizes_1$gender)
+
+mn <- mean(shoe_sizes_1$show_size_eu)
+mn
+std <- sd(shoe_sizes_1$show_size_eu)
+std
+
+hist(shoe_sizes_1$height_cm, 
+     main = "Heights in class",
+     xlab = "Height(cm)",
+     ylab = "Frequency",
+     breaks = 10)
+
+hist(shoe_sizes_1$show_size_eu, 
+     main = "Shoe Size in class",
+     xlab = "Height(cm)",
+     ylab = "Frequency",
+     breaks = 10)
+
+qqnorm(shoe_sizes_1$show_size_eu,
+       pch = 2, frame = FALSE)
+
+qqline(shoe_sizes_1$show_size_eu, 
+       col = "steelblue", lwd = 1)
+
+
+
+
+
 
 ```
+
+
 
 
 
