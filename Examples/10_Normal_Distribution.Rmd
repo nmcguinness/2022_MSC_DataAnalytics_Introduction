@@ -131,7 +131,7 @@ result_sw <- shapiro.test(student_data$show_size_eu)
 result_sw
 ```
 
-A `r result_sw$method` was conducted on the shoe size data. From the output obtained we can not assume normality as the p-value (p=`r round(result_sw$p.value, 4)`) is less than 0.05. Hence, the distribution of the shoe size data is not normal distributed.
+A `r result_sw$method` was conducted on the shoe size data. From the output obtained we can not assume normality as the p-value (p=`r round(result_sw$p.value, 4)`) is less than 0.05.
 
 
 
