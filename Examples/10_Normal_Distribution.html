@@ -2896,7 +2896,7 @@ div.tocify {
 <h3 class="subtitle">Normality testing of student shoe size, height and
 age</h3>
 <h4 class="author">Niall McGuinness, Jane Doe</h4>
-<h4 class="date">Sat, 26 November 22 at 12:38:34</h4>
+<h4 class="date">Sat, 26 November 22 at 12:58:35</h4>
 
 </div>
 
@@ -2964,6 +2964,162 @@ rmarkdown::paged_table(head_student_data)</code></pre>
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["nr"],"name":[1],"type":["int"],"align":["right"]},{"label":["height_cm"],"name":[2],"type":["int"],"align":["right"]},{"label":["show_size_eu"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[4],"type":["chr"],"align":["left"]},{"label":["age_years"],"name":[5],"type":["int"],"align":["right"]},{"label":["DISC_profile"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"190","3":"46","4":"male","5":"47","6":"ENFP","_rn_":"1"},{"1":"2","2":"180","3":"42","4":"male","5":"27","6":"ENFJ-T","_rn_":"2"},{"1":"3","2":"165","3":"37","4":"female","5":"27","6":"INFJ-T","_rn_":"3"},{"1":"4","2":"167","3":"38","4":"male","5":"35","6":"INFJ-T","_rn_":"4"},{"1":"5","2":"180","3":"46","4":"male","5":"28","6":"INFP-T","_rn_":"5"},{"1":"6","2":"173","3":"40","4":"female","5":"29","6":"INFP-A","_rn_":"6"},{"1":"7","2":"180","3":"43","4":"male","5":"63","6":"INFP-A","_rn_":"7"},{"1":"8","2":"175","3":"42","4":"male","5":"47","6":"INFP-T","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<pre class="r"><code># show a &quot;prettier&quot; paged table using kable() with caption and decimal digit max length and alignment = centre
+knitr::kable(student_data,
+  align = c(&#39;c&#39;), # a vector with &#39;c&#39;, &#39;l&#39;, or &#39;r&#39; values
+  digits = 2,
+  caption = &quot;A caption for your table here&quot;)</code></pre>
+<table>
+<caption>A caption for your table here</caption>
+<thead>
+<tr class="header">
+<th align="center">nr</th>
+<th align="center">height_cm</th>
+<th align="center">show_size_eu</th>
+<th align="center">gender</th>
+<th align="center">age_years</th>
+<th align="center">DISC_profile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">190</td>
+<td align="center">46.0</td>
+<td align="center">male</td>
+<td align="center">47</td>
+<td align="center">ENFP</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">180</td>
+<td align="center">42.0</td>
+<td align="center">male</td>
+<td align="center">27</td>
+<td align="center">ENFJ-T</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">165</td>
+<td align="center">37.0</td>
+<td align="center">female</td>
+<td align="center">27</td>
+<td align="center">INFJ-T</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">167</td>
+<td align="center">38.0</td>
+<td align="center">male</td>
+<td align="center">35</td>
+<td align="center">INFJ-T</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">180</td>
+<td align="center">46.0</td>
+<td align="center">male</td>
+<td align="center">28</td>
+<td align="center">INFP-T</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">173</td>
+<td align="center">40.0</td>
+<td align="center">female</td>
+<td align="center">29</td>
+<td align="center">INFP-A</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">180</td>
+<td align="center">43.0</td>
+<td align="center">male</td>
+<td align="center">63</td>
+<td align="center">INFP-A</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">175</td>
+<td align="center">42.0</td>
+<td align="center">male</td>
+<td align="center">47</td>
+<td align="center">INFP-T</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">183</td>
+<td align="center">46.0</td>
+<td align="center">male</td>
+<td align="center">24</td>
+<td align="center">ISFP-T</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">178</td>
+<td align="center">46.0</td>
+<td align="center">male</td>
+<td align="center">31</td>
+<td align="center">ISFJ-T</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center">165</td>
+<td align="center">37.0</td>
+<td align="center">female</td>
+<td align="center">27</td>
+<td align="center">INFJ-T</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="center">177</td>
+<td align="center">44.0</td>
+<td align="center">male</td>
+<td align="center">41</td>
+<td align="center">ISTP-T</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="center">186</td>
+<td align="center">47.0</td>
+<td align="center">male</td>
+<td align="center">31</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td align="center">162</td>
+<td align="center">38.0</td>
+<td align="center">female</td>
+<td align="center">41</td>
+<td align="center">ISFJ-T</td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td align="center">182</td>
+<td align="center">47.5</td>
+<td align="center">male</td>
+<td align="center">39</td>
+<td align="center">INTJ-A</td>
+</tr>
+<tr class="even">
+<td align="center">22</td>
+<td align="center">164</td>
+<td align="center">37.0</td>
+<td align="center">female</td>
+<td align="center">26</td>
+<td align="center">ISFJ-T</td>
+</tr>
+<tr class="odd">
+<td align="center">26</td>
+<td align="center">175</td>
+<td align="center">40.0</td>
+<td align="center">male</td>
+<td align="center">24</td>
+<td align="center">ENFP-T</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="mean-median-summary" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Mean, Median &amp;
@@ -2972,8 +3128,7 @@ Summary</h2>
 shoe_size_std &lt;- sd(student_data$show_size_eu)</code></pre>
 <p>We can access variables from inside code chunks by wrapping the
 variable in a <em>mini-chunk</em> of R as shown on the next line.</p>
-<p>Median shoe size statistics were generated (M = 42.15, SD =
-3.86).</p>
+<p>Median shoe size statistics were generated (M =42.15, SD = 3.86).</p>
 <p>It can be useful to create a summary of the data for quick analysis.
 A summary of the data is shown below:</p>
 <pre class="r"><code>summary(student_data)</code></pre>

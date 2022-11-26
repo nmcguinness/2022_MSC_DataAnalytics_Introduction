@@ -30,10 +30,6 @@ output:
 * [Beautiful tables in R with gtExtras](https://themockup.blog/posts/2022-06-13-gtextras-cran/)
 
 ```{r setup and library load, include=FALSE}
-if(!require("knitr")){
-  install.packages("knitr")
-}
-library(knitr)
 knitr::opts_chunk$set(echo = TRUE)
 cat('\014')
 ```
@@ -64,6 +60,12 @@ rmarkdown::paged_table(student_data)
 # show a "prettier" paged table but ONLY first 8 rows
 head_student_data <- head(student_data, 8)
 rmarkdown::paged_table(head_student_data)
+
+# show a "prettier" paged table using kable() with caption and decimal digit max length and alignment = centre
+knitr::kable(student_data,
+  align = c('c'), # a vector with 'c', 'l', or 'r' values
+  digits = 2,
+  caption = "A caption for your table here")
 ```
 
 ## Mean, Median & Summary
@@ -75,7 +77,7 @@ shoe_size_std <- sd(student_data$show_size_eu)
 
 We can access variables from inside code chunks by wrapping the variable in a *mini-chunk* of R as shown on the next line.
 
-Median shoe size statistics were generated (M = `r round(shoe_size_mean, 2)`, SD = `r round(shoe_size_std, 2)`). 
+Median shoe size statistics were generated (M =`r round(shoe_size_mean, 2)`, SD = `r round(shoe_size_std, 2)`). 
 
 It can be useful to create a summary of the data for quick analysis. A summary of the data is shown below:
 
