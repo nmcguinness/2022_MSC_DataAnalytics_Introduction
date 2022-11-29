@@ -34,6 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 cat('\014')
 ```
 
+
 # Load & Inspect Data 
 
 ## Load data
@@ -50,9 +51,9 @@ student_data <- read.csv(file_name)
 str(student_data)
 
 # show first N
-#head(student_data, 10)
+head(student_data, 10)
 # show last N
-#tail(student_data, 5)
+tail(student_data, 5)
 
 # show a "prettier" paged table
 rmarkdown::paged_table(student_data)
@@ -73,7 +74,11 @@ knitr::kable(student_data,
 ```{r Mean & Median, echo=TRUE}
 shoe_size_mean <- mean(student_data$show_size_eu)
 shoe_size_std <- sd(student_data$show_size_eu)
+
+age <- 40
 ```
+
+The value of age is `r age`
 
 We can access variables from inside code chunks by wrapping the variable in a *mini-chunk* of R as shown on the next line.
 

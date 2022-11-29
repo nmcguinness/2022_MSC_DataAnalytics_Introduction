@@ -2745,8 +2745,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -2754,16 +2754,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -2896,7 +2889,7 @@ div.tocify {
 <h3 class="subtitle">Normality testing of student shoe size, height and
 age</h3>
 <h4 class="author">Niall McGuinness, Jane Doe</h4>
-<h4 class="date">Sat, 26 November 22 at 13:16:23</h4>
+<h4 class="date">Tue, 29 November 22 at 18:22:02</h4>
 
 </div>
 
@@ -2945,11 +2938,27 @@ str(student_data)</code></pre>
 ##  $ age_years   : int  47 27 27 35 28 29 63 47 24 31 ...
 ##  $ DISC_profile: chr  &quot;ENFP&quot; &quot;ENFJ-T&quot; &quot;INFJ-T&quot; &quot;INFJ-T&quot; ...</code></pre>
 <pre class="r"><code># show first N
-#head(student_data, 10)
-# show last N
-#tail(student_data, 5)
-
-# show a &quot;prettier&quot; paged table
+head(student_data, 10)</code></pre>
+<pre><code>##    nr height_cm show_size_eu gender age_years DISC_profile
+## 1   1       190           46   male        47         ENFP
+## 2   2       180           42   male        27       ENFJ-T
+## 3   3       165           37 female        27       INFJ-T
+## 4   4       167           38   male        35       INFJ-T
+## 5   5       180           46   male        28       INFP-T
+## 6   6       173           40 female        29       INFP-A
+## 7   7       180           43   male        63       INFP-A
+## 8   8       175           42   male        47       INFP-T
+## 9   9       183           46   male        24       ISFP-T
+## 10 10       178           46   male        31       ISFJ-T</code></pre>
+<pre class="r"><code># show last N
+tail(student_data, 5)</code></pre>
+<pre><code>##    nr height_cm show_size_eu gender age_years DISC_profile
+## 13 13       186         47.0   male        31         &lt;NA&gt;
+## 14 15       162         38.0 female        41       ISFJ-T
+## 15 17       182         47.5   male        39       INTJ-A
+## 16 22       164         37.0 female        26       ISFJ-T
+## 17 26       175         40.0   male        24       ENFP-T</code></pre>
+<pre class="r"><code># show a &quot;prettier&quot; paged table
 rmarkdown::paged_table(student_data)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -3125,7 +3134,10 @@ knitr::kable(student_data,
 <h2><span class="header-section-number">2.3</span> Mean, Median &amp;
 Summary</h2>
 <pre class="r"><code>shoe_size_mean &lt;- mean(student_data$show_size_eu)
-shoe_size_std &lt;- sd(student_data$show_size_eu)</code></pre>
+shoe_size_std &lt;- sd(student_data$show_size_eu)
+
+age &lt;- 40</code></pre>
+<p>The value of age is 40</p>
 <p>We can access variables from inside code chunks by wrapping the
 variable in a <em>mini-chunk</em> of R as shown on the next line.</p>
 <p>Median shoe size statistics were generated (M =42.15, SD = 3.86).</p>
