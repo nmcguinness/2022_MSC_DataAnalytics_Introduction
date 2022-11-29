@@ -15,6 +15,3 @@
 # What is the range for 68% of respondents centred around the median?
 
 # What value of X is necessary to be in the top 95% of the population?
-
-res <- pnorm(1, mean = 0, sd = 1, lower.tail = FALSE)
-res
