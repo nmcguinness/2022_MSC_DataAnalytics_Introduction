@@ -6,6 +6,7 @@
 
 # Construct/enter normally distributed data
 movie_ratings <- c(1,2,3,4,5,6,7,8,9,10)
+summary(movie_ratings)
 
 # Generate mean, median, mode, and standard deviation
 movie_mean <- mean(movie_ratings)
@@ -16,9 +17,20 @@ movie_sd
 
 # Carry out normality tests
 hist(movie_ratings)
-
 qqnorm(movie_ratings, pch = 2, frame = FALSE, datax = TRUE)
 qqline(movie_ratings, col = "darkorchid", lwd = 1, datax = TRUE)
+
+#Z <-  1
+#find ideal value at z = 1 or +1 SD from median
+#Z <-  (value - mean)/SD
+# value <-  Z * SD + mean
+ideal_value <- 1 * 3.02765 + 5.5
+ideal_value
+
+
+# Q1 (25th percentile) = 3.25
+# Q2 (50th percentile) = 5.5
+# Q3 (75th percentile) = 7.75
 
 
 
